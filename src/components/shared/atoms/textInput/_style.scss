@@ -1,0 +1,23 @@
+.text-input-error {
+  border-style: solid;
+  border-width: 3px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.text-input-error-label {
+  color: $error-color;
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
