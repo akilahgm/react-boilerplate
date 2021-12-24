@@ -12,7 +12,6 @@ interface IProps {
   className?: string;
   pattern?: string;
   size?: number;
-  error?: boolean;
   type?: InputType;
   rows?: string;
   validation?: {
@@ -21,6 +20,8 @@ interface IProps {
   };
   tabIndex?: number | undefined;
   innerRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement>;
+  labelText?: string;
+  labelClassName?: string;
 }
 
 const TextInput: React.FunctionComponent<IProps> = React.memo(
@@ -31,37 +32,49 @@ const TextInput: React.FunctionComponent<IProps> = React.memo(
     className,
     pattern,
     size,
-    error,
     type,
     rows,
     disabled,
     validation,
     onFocus,
-    tabIndex = 0
+    tabIndex = 0,
+    labelText,
+    labelClassName
   }: IProps) => {
     return (
-      <>
-        <Input
-          disabled={disabled}
-          className={`${error ? 'text-input-error' : className}`}
-          placeholder={placeholder}
-          onChange={onChange}
-          value={value}
-          pattern={pattern}
-          size={size}
-          type={type}
-          rows={rows}
-          onFocus={onFocus}
-          tabIndex={tabIndex}
-        />
-        {validation && validation.isInValid ? (
-          <Label className={'text-input-error-label'}>
-            {validation.validationMsg
-              ? validation.validationMsg
-              : 'Invalid Field'}
-          </Label>
-        ) : null}
-      </>
+      <div>
+        <div className="d-flex flex-direction-row align-items-start">
+          <Label className={labelClassName}>{labelText}</Label>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div>
+              <Input
+                disabled={disabled}
+                className={`default-text-input ${
+                  validation && validation.isInValid ? 'text-input-error' : ''
+                } ${className}`}
+                placeholder={placeholder}
+                onChange={onChange}
+                value={value}
+                pattern={pattern}
+                size={size}
+                type={type}
+                rows={rows}
+                onFocus={onFocus}
+                tabIndex={tabIndex}
+              />
+            </div>
+            <div>
+              {validation && validation.isInValid ? (
+                <Label className={'text-input-error-label'}>
+                  {validation.validationMsg
+                    ? validation.validationMsg
+                    : 'Invalid Field'}
+                </Label>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 );

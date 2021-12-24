@@ -150,17 +150,29 @@ body {
 .background-disabled-color {
   background: #f5e4e4 !important; }
 
+.default-text-input {
+  min-width: 80px;
+  max-width: 260px;
+  height: 40px;
+  outline: none;
+  border: 2px solid #aaaaaa; }
+
+.default-text-input:focus {
+  outline: none;
+  border: 2px solid #aaaaaa; }
+
+.form-control:focus {
+  box-shadow: 0 0 1px 1px #aaaaaa; }
+
 .text-input-error {
-  border-style: solid;
-  border-width: 3px;
-  margin-bottom: 0;
-  padding-bottom: 0; }
+  border-color: #cc5841; }
+
+.text-input-error:focus {
+  border-color: #cc5841; }
 
 .text-input-error-label {
-  color: #f9c5ba;
-  font-size: 12px;
-  margin-top: 0;
-  padding-top: 0; }
+  color: #cc5841;
+  margin-left: 2px; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -172,4 +184,13 @@ input[type='number'] {
   -moz-appearance: textfield; }
 
 .text-label {
+  min-width: 100px;
+  max-width: 260px;
   color: #000000; }
+
+.add-people-input {
+  width: 300px; }
+
+.add-people-label {
+  width: 140px;
+  margin-top: 6px; }
