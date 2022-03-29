@@ -1,14 +1,14 @@
-import { AddPeopleForm } from '../../components';
+import { ViewPeopleList } from '../../components';
 import { PageContainer } from '../../components/shared';
 
-function AddPeople() {
+function ViewPeople() {
   return (
     <PageContainer>
       <div>
-        <AddPeopleForm />
+        <ViewPeopleList />
       </div>
     </PageContainer>
   );
 }
 
-export { AddPeople };
+export { ViewPeople };

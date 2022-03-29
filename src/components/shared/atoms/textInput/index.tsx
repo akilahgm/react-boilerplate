@@ -42,10 +42,15 @@ const TextInput: React.FunctionComponent<IProps> = React.memo(
     labelClassName
   }: IProps) => {
     return (
-      <div>
-        <div className="d-flex flex-direction-row align-items-start">
-          <Label className={labelClassName}>{labelText}</Label>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className="">
+        <div className="row">
+          <div className="col">
+            <Label className={labelClassName}>{labelText}</Label>
+          </div>
+          <div
+            className="col"
+            style={{ display: 'flex', flexDirection: 'column' }}
+          >
             <div>
               <Input
                 disabled={disabled}

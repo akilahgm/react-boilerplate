@@ -94,6 +94,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.text-inline {
+  flex-wrap: nowrap; }
+
 .button-cursor {
   cursor: default; }
 
@@ -148,11 +151,9 @@ body {
   pointer-events: none; }
 
 .background-disabled-color {
-  background: #f5e4e4 !important; }
+  background: #e2e2e2 !important; }
 
 .default-text-input {
-  min-width: 80px;
-  max-width: 260px;
   height: 40px;
   outline: none;
   border: 2px solid #aaaaaa; }
@@ -188,9 +189,62 @@ input[type='number'] {
   max-width: 260px;
   color: #000000; }
 
+.attachment-error {
+  color: #cc5841;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0;
+  padding-top: 5px;
+  padding-left: 9px; }
+
+.dropZoneContainer {
+  border: dashed;
+  border-width: thin; }
+
+.default-date-input {
+  height: 40px;
+  outline: none;
+  border: 2px solid #aaaaaa;
+  border-radius: 4px;
+  text-align: right;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.react-datepicker__header__dropdown--select select {
+  border: 1px solid #000000;
+  border-radius: 1px;
+  height: 20px; }
+
+.react-datepicker__year-dropdown-container--select {
+  margin-left: 4%; }
+
+.date-input-error {
+  border-color: #cc5841; }
+
+.date-input-error:focus {
+  border-color: #cc5841; }
+
 .add-people-input {
-  width: 300px; }
+  width: 300px;
+  margin-left: 5px; }
 
 .add-people-label {
   width: 140px;
   margin-top: 6px; }
+
+.add-people-drop-label {
+  min-width: 140px;
+  margin-top: 6px;
+  max-width: 170px; }
+
+.address-input {
+  height: 130px; }
+
+.full-name-input {
+  height: 80px; }
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: transparent; }
+
+.table > thead {
+  background-color: #e2e2e2; }
